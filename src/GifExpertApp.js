@@ -1,20 +1,18 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import AddCategory from './components/AddCategory';
 
 const GifExpertApp = props => {
 
     const [categories, setCategories] = useState(['Ouran High School Host Club']);
 
-    const handleAdd = () =>{
-        setCategories([...categories, 'Bokura ga Ita' ])
-    }
 
 
   return (
     <>
     <h2>GifExpertApp</h2>
+    <AddCategory/>
     <hr />
-    <button onClick={handleAdd}>Agregar</button>
     <ol>
         {
             categories.map(category => {
