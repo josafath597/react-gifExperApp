@@ -10,16 +10,16 @@ const GifExpertApp = props => {
 
   return (
     <>
-    <h2>GifExpertApp</h2>
-    <AddCategory/>
-    <hr />
-    <ol>
-        {
+      <h2>GifExpertApp</h2>
+      <AddCategory setCategories={setCategories}/>
+      <hr />
+      <ol>
+          {
             categories.map(category => {
                 return <li key={category}>{category}</li>
             })
-        }
-    </ol>
+          }
+      </ol>
     </>  
   )
 }

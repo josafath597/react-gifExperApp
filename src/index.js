@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import GifExpertApp from './GifExpertApp';
 import './index.css';
 
+import "primereact/resources/themes/md-light-indigo/theme.css";  //theme
+import "primereact/resources/primereact.min.css";                  //core css
+import "primeicons/primeicons.css";  
+
 ReactDOM.render(
     <GifExpertApp />,
   document.getElementById('root')
