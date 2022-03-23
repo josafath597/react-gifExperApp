@@ -1,6 +1,8 @@
-import React, { useState , useEffect } from 'react'
+import React, { useState , useEffect } from 'react';
+import { GifGridItem } from './GifGridItem';
 
 export const GifGrid = ({category}) => {
+    const [images, setImages] = useState([])
 
     const getGifs = async() => {
         const url = 'https://api.giphy.com/v1/gifs/search?q=Ouran High School Host Club&limit=30&api_key=wUuOqDqYhaY2T0k6E9nBm5RotSG2ZcV9';
@@ -13,7 +15,7 @@ export const GifGrid = ({category}) => {
                 url: img.images?.downsized_medium.url
             } 
         })
-        console.log(gifs);
+        setImages( gifs )
     }
 
     useEffect(() => {
@@ -23,9 +25,17 @@ export const GifGrid = ({category}) => {
     
     return (
     <div>
-        <h3>
-            {category}
-        </h3>
+        <h3> {category} </h3>
+      
+        {
+                images.map( img =>(
+                    <GifGridItem
+                    key={img.id}
+                    { ...img } 
+                />
+                ))
+        }
+       
     </div>
   )
 }
