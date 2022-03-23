@@ -11,12 +11,8 @@ const AddCategory = ( {setCategories} ) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Submit Hecho');
-        // setCategories(cats => {
-        //     [ ...cats, e.target.value]
-        // })
         if(inputValue.trim().length>2){
-            setCategories(cats => [...cats, inputValue])
+            setCategories(cats => [inputValue, ...cats])
             setInputValue('');
         }
     }
