@@ -5,7 +5,7 @@ import { GifGrid } from './components/GifGrid';
 
 const GifExpertApp = props => {
 
-    const [categories, setCategories] = useState(['Ouran High School Host Club']);
+    const [categories, setCategories] = useState(['']);
 
 
 
